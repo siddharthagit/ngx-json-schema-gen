@@ -11,6 +11,12 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "paths": {
+      "ngx-json-schema-gen": [
+        "dist/ngx-json-schema-gen/ngx-json-schema-gen",
+        "dist/ngx-json-schema-gen"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
