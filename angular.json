@@ -31,9 +31,21 @@
             "tsConfig": "projects/ngx-json-schema-gen/tsconfig.spec.json",
             "karmaConfig": "projects/ngx-json-schema-gen/karma.conf.js"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ngx-json-schema-gen/**/*.ts",
+              "projects/ngx-json-schema-gen/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "ngx-json-schema-gen"
+  "defaultProject": "ngx-json-schema-gen",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

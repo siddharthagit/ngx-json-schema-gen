@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { NgxJsonSchemaGenComponent } from './ngx-json-schema-gen.component';
+import { NgxJsonSchemaGenService } from './ngx-json-schema-gen.service';
 
 
 
@@ -10,7 +11,7 @@ import { NgxJsonSchemaGenComponent } from './ngx-json-schema-gen.component';
   imports: [
   ],
   exports: [
-    NgxJsonSchemaGenComponent
+    NgxJsonSchemaGenComponent, NgxJsonSchemaGenService
   ]
 })
 export class NgxJsonSchemaGenModule { }
