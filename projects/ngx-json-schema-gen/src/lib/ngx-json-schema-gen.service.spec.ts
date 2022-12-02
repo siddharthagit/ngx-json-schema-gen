@@ -19,7 +19,8 @@ describe('NgxJsonSchemaGenService', () => {
     let json = {
       "phone": {
           "isd": 91,
-          "num": 123456
+          "num": 123456,
+          "active":true
       }
     }
 

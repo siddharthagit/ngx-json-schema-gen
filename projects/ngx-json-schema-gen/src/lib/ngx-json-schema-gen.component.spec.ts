@@ -22,4 +22,5 @@ describe('NgxJsonSchemaGenComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });

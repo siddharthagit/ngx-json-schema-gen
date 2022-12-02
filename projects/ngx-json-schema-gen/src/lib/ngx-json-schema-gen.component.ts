@@ -8,6 +8,10 @@ import { NgxJsonSchemaGenService } from './ngx-json-schema-gen.service';
   styles: [
   ]
 })
+/**
+ * Component to generate output JSON schema from the input JSON string.
+ * It calls the NgxJsonSchemaGenService Service which takes care of generating JSON Schema
+ */
 export class NgxJsonSchemaGenComponent implements OnChanges  {
 
   @Input() jsonString:string | undefined;
@@ -22,5 +26,4 @@ export class NgxJsonSchemaGenComponent implements OnChanges  {
     }
   
   }
-
 }
