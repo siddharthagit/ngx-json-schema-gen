@@ -7,10 +7,11 @@ import { NgxJsonSchemaGenService } from './ngx-json-schema-gen.service';
   declarations: [
     NgxJsonSchemaGenComponent
   ],
-  imports: [
+  providers: [
+    NgxJsonSchemaGenService 
   ],
   exports: [
-    NgxJsonSchemaGenComponent, NgxJsonSchemaGenService
+    NgxJsonSchemaGenComponent
   ]
 })
 export class NgxJsonSchemaGenModule { }

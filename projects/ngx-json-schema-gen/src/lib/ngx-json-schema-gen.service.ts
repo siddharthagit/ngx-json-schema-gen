@@ -6,10 +6,9 @@ import { JSONSchema, JSONSchemaArray, JSONSchemaObject, JSONSchemaProp } from '.
 @Injectable({
   providedIn: 'root'
 })
-
 /**
  * Service which generates JSON Schema from a JSON object.
- */
+*/
 export class NgxJsonSchemaGenService {
 
   requiredFieldMarker = "none"
