@@ -21,19 +21,18 @@ export class NgxJsonSchemaGenService {
    * @returns Generated Schema as String
    */
   public generateSchemaStr(json: object, reqFieldFlag?:string): string {
-    let result: string = JSON.stringify(this.generateSchema(json, reqFieldFlag));
-    console.log("generateSchema result=" + result);
+    let result: string = JSON.stringify(this.generateSchema(json, reqFieldFlag), null, 4);
+    console.log("generateSchema result = " + result);
     return result;
   }
 
   public generateSchema(json: object, reqFieldFlag?:string): JSONSchema {
     this.requiredFieldMarker = reqFieldFlag == undefined? "none": reqFieldFlag;
     let schema: JSONSchema = new JSONSchema();
-    console.log("generateSchema " + json);
+    console.log("generateSchema object = " + json);
     this.parse(json, schema);
     return schema;
   }
-
 
   private parse(json: any, schema: any) {
     console.log("parse json " + JSON.stringify(json));
@@ -72,11 +71,10 @@ export class NgxJsonSchemaGenService {
       var item = json[key];
       var currKeyProp = schema.properties[key] = {};
       if (this.requiredFieldMarker === "all") {
-        key = key.substring(1);
         schema.required.push(key);
       }
       if (key[0] === this.requiredFieldMarker) {
-        key = key.substring(1);
+        key = key.substring(this.requiredFieldMarker.length);
         schema.required.push(key);
       }
       this.parse(item, currKeyProp)
@@ -94,8 +92,7 @@ export class NgxJsonSchemaGenService {
 
   private isJSONObject(obj: any) {
     let ret:boolean = obj ? typeof obj === 'object' && Object.getPrototypeOf(obj) === Object.prototype : false;
-
-    console.log("isPlainObject " + JSON.stringify(obj) + " ::" + ret);
+    console.log("isJSONObject " + JSON.stringify(obj) + " :: " + ret);
     return ret;
   }
 

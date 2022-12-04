@@ -1,24 +1,41 @@
-# NgxJsonSchemaGen
+# ngx-json-schema-gen
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
-## Code scaffolding
+## Installing
 
-Run `ng generate component component-name --project ngx-json-schema-gen` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-json-schema-gen`.
-> Note: Don't forget to add `--project ngx-json-schema-gen` or else it will be added to the default project in your `angular.json` file. 
+Run `npm i ngx-json-schema-gen` to install the package
 
-## Build
+## Getting started
 
-Run `ng build ngx-json-schema-gen` to build the project. The build artifacts will be stored in the `dist/` directory.
+Use the NgxJsonSchemaGenService Service in your project:
 
-## Publishing
+```typescript
+import { Component } from '@angular/core';
+import { NgxJsonSchemaGenService } from 'ngx-json-schema-gen';
 
-After building your library with `ng build ngx-json-schema-gen`, go to the dist folder `cd dist/ngx-json-schema-gen` and run `npm publish`.
+@Component({
+  ...
+})
+export class AppComponent {
+  constructor(private service: NgxJsonSchemaGenService) {}
 
-## Running unit tests
+  //Input JSON Object
+  injson = {
+    phone: {
+      isd: 91,
+      num: 123456,
+      active: true,
+    },
+  };
+ 
+  //Output JSON Schema as String
+  outschemaStr = this.service.generateSchemaStr(this.injson, 'all');
+  
+}
+``` 
 
-Run `ng test ngx-json-schema-gen` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Demo
+https://stackblitz.com/edit/angular-json-schema-gen?file=src/app/hello.component.ts
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+For a more detailed explanation of how to use this library, please refer to the [full documentation](https://alberthaff.dk/projects/ngx-papaparse/docs/v6). 

@@ -20,7 +20,6 @@ export class NgxJsonSchemaGenComponent implements OnChanges  {
   constructor(private service:NgxJsonSchemaGenService) { }
  
   ngOnChanges(changes: SimpleChanges): void {
-      
     if (this.jsonString != undefined) {
       this.schemaOut.emit(JSON.stringify(this.service.generateSchemaStr (JSON.parse(this.jsonString))));
     }
