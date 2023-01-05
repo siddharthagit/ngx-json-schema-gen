@@ -38,7 +38,7 @@ export class HelloComponent {
     };
 
     //Output JSON Schema String
-    outschema = this.outschema = this.service.generateSchemaStr(this.injson, 'all');;
+    outschema = this.service.generateSchemaStr(this.injson, 'all');;
   }
 }
 
